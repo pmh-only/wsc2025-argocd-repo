@@ -1,6 +1,7 @@
 name: Docker Image CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
     paths:
@@ -27,7 +28,7 @@ jobs:
           docker push 648911607072.dkr.ecr.ap-southeast-1.amazonaws.com/app-repo:$(cat version)
 
 
-          sed -i 's/VERSION/'$(cat version)'/g' manifest/deploy.yaml
+          sed 's/VERSION/'$(cat version)'/g' manifest/deploy-template.yaml > manifest/deploy.yaml
 
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
