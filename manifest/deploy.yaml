@@ -22,7 +22,7 @@ spec:
         app: nginx-deploy
     spec:
       containers:
-      - image: 648911607072.dkr.ecr.ap-southeast-1.amazonaws.com/app-repo:v1.0.0
+      - image: 648911607072.dkr.ecr.ap-southeast-1.amazonaws.com/app-repo:v1.0.1
         imagePullPolicy: IfNotPresent
         name: app-repo
         resources: {}
